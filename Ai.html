@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="Ai.css">
+    <script src="Ai.js" defer></script>
+</head>
+<body>
+
+    <!-- Banner Section -->
+    <div class="banner">
+        <div class="banner-content">
+            <h1><span class="highlight">InvestAi</span></h1>
+            <p>Empowering smarter investments with cutting-edge AI technology. Maximize your returns with precision, data-driven insights, and innovative tools.</p>
+            <p class="quote">"AI-powered solutions for smarter, faster, and more efficient investment decisions."</p>
+        </div>
+        <!-- Notify Button -->
+        <button class="notify-btn">
+            <img src="active.png" alt="Notify Icon"> Notify
+        </button>
+    </div>
+
+    <!-- Real-Time Information Section (Running Phone Numbers) -->
+    <div class="real-time-info">
+        <marquee class="real-time-withdrawals"></marquee>
+    </div>
+
+    <!-- Quick Action Buttons -->
+<div class="quick-actions">
+    <a href="withdraw-page.html" class="btn withdraw">💰 Withdraw</a>
+    <a href="recharge.html" class="btn recharge">🔄 Recharge</a>
+    <a href="Profile page.html" class="btn account">👤 Account</a>
+    <a href="service.html" class="btn service">📞 Service</a>
+    <a href="Invest page.html" class="btn invest">📊 Invest</a>
+    <a href="rewards.html" class="btn rewards">🎁 Rewards</a>
+    <a href="about-page.html" class="btn about-us">ℹ️About us</a>
+</div>
+    <!-- Featured Investment Plans -->
+<div class="featured-investments">
+    <h2>🔥 AI-Powered Featured Plans</h2>
+    <div class="investment-slider">
+        <div class="slide">
+            <h3>VIP1 Plan</h3>
+            <p>Investment: ₱250 | Daily Earnings: ₱48 | ROI: 19.2% (7 Days)</p>
+            <p>AI-Optimized for Low-Risk Growth</p>
+            <button class="invest-btn" onclick="handleInvestment('vip1', 250)">Invest Now</button>
+        </div>
+        <div class="slide">
+            <h3>VIP2 Plan</h3>
+            <p>Investment: ₱600 | Daily Earnings: ₱124.80 | ROI: 20.8% (7 Days)</p>
+            <p>AI-Enhanced for Balanced Growth</p>
+            <button class="invest-btn" onclick="handleInvestment('vip2', 600)">Invest Now</button>
+        </div>
+        <div class="slide">
+            <h3>VIP3 Plan</h3>
+            <p>Investment: ₱1,500 | Daily Earnings: ₱326.40 | ROI: 21.76% (7 Days)</p>
+            <p>AI-Driven for High-Growth Potential</p>
+            <button class="invest-btn" onclick="handleInvestment('vip3', 1500)">Invest Now</button>
+        </div>
+    </div>
+    <button class="slider-btn prev" onclick="slidePrev()">❮</button>
+    <button class="slider-btn next" onclick="slideNext()">❯</button>
+</div>
+    <!-- Bottom Navigation -->
+    <div class="bottom-nav">
+        <a href="Ai.html" class="active">🏠 Home</a>
+        <a href="Invest page.html">📊 Invest</a>
+        <a href="Team page.html">👥 Team</a>
+        <a href="Order page.html">📑 Order</a>
+        <a href="Profile page.html">👤 Me</a>
+    </div>
+
+</body>
+</html>

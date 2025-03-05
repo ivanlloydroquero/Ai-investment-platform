@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltalia - Customer Service</title>
+    <link rel="stylesheet" href="customerservice.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <h1>Voltalia - Customer Service</h1>
+        </header>
+
+        <main class="customer-service-content">
+            <div class="customer-service-section hero">
+                <h2>🔧 AI-Powered Customer Support</h2>
+                <p>Get instant, secure, and intelligent support from Voltalia’s AI-driven customer service team. We’re here to assist you 24/7.</p>
+                <img src="images/support-hero.jpg" alt="Voltalia customer service team" class="support-image">
+            </div>
+
+            <div class="customer-service-section contact">
+                <h2>Contact Us</h2>
+                <p>Reach out to our AI-powered support team for quick assistance:</p>
+                <ul class="contact-info">
+                    <li>Email: support@voltalia.com</li>
+                    <li>Phone: +63 123 456 7890 (Mon-Fri, 9 AM - 6 PM PST)</li>
+                    <li>Address: 123 AI Drive, Manila, Philippines</li>
+                </ul>
+            </div>
+
+            <div class="customer-service-section telegram">
+                <h2>Telegram Support</h2>
+                <p>Connect with us instantly via Telegram for real-time support. Our AI chatbot and human agents are ready to assist you securely and efficiently.</p>
+                <p>Scan the QR code or click the link below to start a conversation:</p>
+                <img src="images/telegram-qr.jpg" alt="Voltalia Telegram QR Code" class="telegram-qr">
+                <a href="https://t.me/VoltaliaSupportBot" target="_blank" class="telegram-link">Chat with Voltalia Support Bot</a>
+                <p>Our Telegram bot (@VoltaliaSupportBot) handles common queries instantly, while human agents escalate complex issues. Telegram ensures end-to-end encryption for your privacy.</p>
+            </div>
+
+            <div class="customer-service-section faq">
+                <h2>Frequently Asked Questions</h2>
+                <p>Find answers to common questions about Voltalia’s services, powered by our AI knowledge base:</p>
+                <div class="faq-grid">
+                    <div class="faq-item">
+                        <h3>How do I recharge my account?</h3>
+                        <p>Log in, navigate to the Recharge page, enter your amount, and choose your payment method. AI optimizes your transaction for speed and security.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>What is the minimum withdrawal amount?</h3>
+                        <p>The minimum withdrawal is ₱100. Our AI suggests optimal amounts based on your balance for low fees and high returns.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h3>How can I earn rewards?</h3>
+                        <p>Earn Voltalia Points through recharges, investments, and referrals. Redeem them for cashback, gift cards, or VIP access via our Rewards page.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="customer-service-section support-hours">
+                <h2>Support Hours & Availability</h2>
+                <p>Our AI chatbot is available 24/7, while human agents are online Monday to Friday, 9 AM - 6 PM PST. For urgent issues outside these hours, use Telegram for instant AI assistance.</p>
+                <img src="images/support-hours.jpg" alt="Voltalia support hours" class="support-image">
+            </div>
+            <canvas class="particle-canvas" id="particleCanvas"></canvas>
+        </main>
+    </div>
+    <script src="customerservice.js"></script>
+    <script src="https://telegram.org/js/telegram-web-app.js"></script> <!-- Telegram Web App SDK -->
+</body>
+</html>

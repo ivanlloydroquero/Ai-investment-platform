@@ -1,0 +1,82 @@
+/* GENERAL STYLES */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #0052D4, #4364F7);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* HEADER */
+header {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+/* REGISTRATION FORM */
+.register-container {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 400px;
+    color: black;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.input-group {
+    position: relative;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+}
+
+input {
+    width: 93%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+/* PASSWORD TOGGLE */
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    cursor: pointer;
+}
+
+/* ERROR MESSAGES */
+small.error {
+    color: red;
+    display: none;
+}
+
+/* REGISTER BUTTON */
+.register-btn {
+    width: 100%;
+    padding: 10px;
+    background: #0084ff;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    border-radius: 5px;
+}
+
+.register-btn:hover {
+    background: #005ecb;
+}
+
+/* LOGIN LINK */
+.login-link {
+    text-align: center;
+    margin-top: 10px;
+}

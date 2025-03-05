@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltalia - Advanced AI Withdraw</title>
+    <link rel="stylesheet" href="withdraw-page.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <h1>Voltalia Withdraw</h1>
+            <div class="balance-section">
+                <h2>Account Balance</h2>
+                <div class="balance-amount">₱<span id="balance">5,000.00</span></div>
+                <button class="history-btn" onclick="showHistory()">Withdraw History ></button>
+                <button class="analytics-btn" onclick="showAnalytics()">AI Analytics ></button>
+            </div>
+        </header>
+
+        <main class="withdraw-content">
+            <div class="withdraw-form advanced-form">
+                <h2>🔄 AI-Optimized Withdraw</h2>
+                <p>Withdraw funds securely with our intelligent AI recommendations.</p>
+                <form id="withdrawForm">
+                    <div class="form-group">
+                        <label for="withdrawAmount">Withdrawal Amount (₱)</label>
+                        <div class="input-container">
+                            <input type="number" id="withdrawAmount" name="withdrawAmount" min="100" step="50" placeholder="Enter amount (min ₱100)" required>
+                            <button type="button" class="voice-btn" onclick="startVoiceInput()" aria-label="Use voice to enter withdrawal amount">🎙️</button>
+                        </div>
+                        <span class="ai-suggestion" id="aiSuggestion" data-tooltip="Click for AI analysis: Predicted ROI +${(parseFloat(aiSuggestion.textContent.split('₱')[1]) * 0.025).toFixed(2)} in 7 days">AI suggests: ₱500 for optimal balance</span>
+                        <span class="validation-message" id="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="maya">Maya</option>
+                            <option value="gcash">GCash</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="withdraw-btn">Withdraw Now</button>
+                </form>
+                <div class="reminders">
+                    <h3>Important Notes:</h3>
+                    <ul>
+                        <li>Minimum withdrawal: ₱100. AI optimizes for low fees and returns.</li>
+                        <li>Processing: 1-3 days with AI verification.</li>
+                        <li>AI predicts optimal times for withdrawals.</li>
+                    </ul>
+                </div>
+            </div>
+            <canvas class="particle-canvas" id="particleCanvas"></canvas>
+        </main>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle"></h2>
+                <div id="modalContent"></div>
+                <button class="modal-back-btn" onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <div class="modal analytics-modal" id="analyticsModal">
+            <div class="modal-content">
+                <h2>AI Withdrawal Insights</h2>
+                <div id="analyticsContent" class="analytics-grid">
+                    <p>Balance Trend: Stable <span class="ai-indicator">🔄</span></p>
+                    <p>Optimal: ₱500 (+2.5% ROI) <span class="ai-indicator">🤖</span></p>
+                    <p>Activity: 3 Withdrawals <span class="ai-indicator">📅</span></p>
+                </div>
+                <canvas id="analyticsChart" width="400" height="200"></canvas>
+                <button class="modal-back-btn" onclick="closeAnalyticsModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="withdraw-page.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For analytics chart -->
+</body>
+</html>

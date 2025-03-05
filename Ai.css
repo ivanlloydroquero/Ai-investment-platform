@@ -1,0 +1,348 @@
+/* General Styles */
+body {
+    background: #F5F5F5;
+    color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Banner Section */
+.banner {
+    background: linear-gradient(to right, #0A0F1E, #1E3A8A);
+    color: white;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    margin: 10px;
+}
+
+.banner-content {
+    max-width: 60%;
+}
+
+.banner h1 {
+    font-size: 24px;
+    margin: 0;
+}
+
+.highlight {
+    color: #FFD700;
+}
+
+.quote {
+    font-style: italic;
+    font-size: 14px;
+}
+
+/* Notify Button */
+.notify-btn {
+    background: #FFD700;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.notify-btn img {
+    width: 20px;
+    margin-right: 5px;
+}
+
+/* Real-Time Info (Running Phone Numbers) */
+.real-time-info {
+    background: #0A0F1E;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+}
+
+marquee {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Quick Action Buttons */
+.quick-actions {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.btn, .btn:link, .btn:visited {
+    background: #007bff; /* Default blue theme color */
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer; /* Indicates clickability */
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s, opacity 0.2s; /* Smooth transitions for all interactive states */
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    min-width: 120px;
+    justify-content: center;
+    outline: none; /* Remove default outline for better custom focus */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-decoration: none; /* Remove default link underline */
+}
+
+.btn:hover, .btn:focus {
+    background: #0056b3; /* Darker blue on hover */
+    transform: scale(1.05); /* Slight scale up for hover feedback */
+    box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3); /* Enhanced shadow on hover */
+}
+
+.btn:focus {
+    outline: 2px solid #0056b3; /* Custom focus outline for accessibility */
+    outline-offset: 2px;
+}
+
+.btn:active {
+    transform: scale(0.98); /* Slight scale down on click */
+    background: #004085; /* Even darker blue for active state */
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Reduced shadow on click */
+}
+
+.btn.withdraw {
+    background: #28a745; /* Green for Withdraw */
+}
+
+.btn.withdraw:hover {
+    background: #218838; /* Darker green on hover */
+}
+
+.btn.recharge {
+    background: #007bff; /* Blue for Recharge (default) */
+}
+
+.btn.recharge:hover {
+    background: #0056b3; /* Darker blue on hover */
+}
+
+.btn.account {
+    background: #dc3545; /* Red for Account */
+}
+
+.btn.account:hover {
+    background: #c82333; /* Darker red on hover */
+}
+
+.btn.service {
+    background: #ffc107; /* Yellow for Service, with dark text for contrast */
+    color: #333;
+}
+
+.btn.service:hover {
+    background: #e0a800; /* Darker yellow on hover */
+}
+
+.btn.invest {
+    background: #17a2b8; /* Cyan for Invest */
+}
+
+.btn.invest:hover {
+    background: #138496; /* Darker cyan on hover */
+}
+
+.btn.rewards {
+    background: #e83e8c; /* Pink for Rewards */
+}
+
+.btn.rewards:hover {
+    background: #d3256b; /* Darker pink on hover */
+}
+.btn.about-us {
+  background: #020202;
+}
+.btn.about-us:hover {
+  background: #090909;
+}
+
+/* Disabled state (optional, if you want to add a disabled link later) */
+.btn:disabled, .btn:disabled:hover {
+    background: #6c757d; /* Gray for disabled state */
+    cursor: not-allowed;
+    opacity: 0.7;
+    transform: none;
+    box-shadow: none;
+}
+
+/* Responsive Design for Quick Actions */
+@media (max-width: 600px) {
+    .quick-actions {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .btn {
+        width: 100%;
+        max-width: 200px;
+        margin: 5px 0;
+    }
+}
+
+/* Featured Investments */
+.featured-investments {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1); /* AI-themed gradient (blue shades) */
+    padding: 20px;
+    border-radius: 12px;
+    margin: 30px 0;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    color: white;
+    position: relative;
+}
+
+.featured-investments h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Subtle shadow for readability */
+}
+
+.investment-slider {
+    display: flex;
+    overflow: hidden;
+    scroll-behavior: smooth;
+    gap: 20px;
+    padding: 10px;
+    position: relative;
+}
+
+.slide {
+    flex: 0 0 auto;
+    background: white;
+    color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 300px;
+    min-height: 200px;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    text-align: center;
+}
+
+.slide h3 {
+    font-size: 1.2em;
+    color: #007bff;
+    margin-bottom: 10px;
+}
+
+.slide p {
+    font-size: 0.9em;
+    margin: 5px 0;
+    line-height: 1.4;
+}
+
+.invest-btn {
+    background: #28a745; /* Green for Invest Now, matching Voltalia theme */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s;
+    margin-top: 15px;
+    display: inline-block;
+    text-decoration: none;
+}
+
+.invest-btn:hover {
+    background: #218838; /* Darker green on hover */
+    transform: scale(1.05); /* Slight scale up for feedback */
+    box-shadow: 0 4px 8px rgba(40, 167, 69, 0.3); /* Enhanced shadow on hover */
+}
+
+.invest-btn:focus {
+    outline: 2px solid #218838;
+    outline-offset: 2px;
+}
+
+.invest-btn:active {
+    transform: scale(0.98); /* Slight scale down on click */
+    background: #1e7e34; /* Even darker green for active state */
+}
+
+.slider-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #007bff;
+    z-index: 1;
+    transition: background 0.3s, transform 0.2s;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.slider-btn:hover {
+    background: rgba(255, 255, 255, 1);
+    transform: scale(1.1);
+}
+
+.slider-btn.prev {
+    left: 10px;
+}
+
+.slider-btn.next {
+    right: 10px;
+}
+
+/* Responsive Design for Featured Investments */
+@media (max-width: 768px) {
+    .featured-investments {
+        padding: 15px;
+    }
+
+    .investment-slider {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .slide {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .slider-btn {
+        display: none; /* Hide navigation buttons on mobile, use scrolling instead */
+    }
+}
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #132144;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+}
+
+.bottom-nav .active {
+    color: #FFD700;
+}

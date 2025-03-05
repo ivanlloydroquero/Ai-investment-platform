@@ -1,0 +1,108 @@
+/* Set the Background to Deep Navy Blue */
+body {
+    background: #0A0F1E; /* Deep Navy Blue */
+    color: white;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header - Royal Blue */
+.team-header {
+    background: #1E3A8A; /* Royal Blue */
+    text-align: center;
+    color: white;
+    padding: 1px;
+    font-size: 18px;
+}
+
+/* Referral Section */
+.referral-box {
+    background: #132144;
+    padding: 15px;
+    text-align: center;
+    border-radius: 8px;
+    margin: 10px;
+}
+.referral-id {
+    font-size: 22px;
+    font-weight: bold;
+}
+.referral-box input {
+    width: 80%;
+    padding: 8px;
+    margin: 5px;
+    border: none;
+    background: white;
+    color: black;
+    text-align: center;
+}
+.referral-box button {
+    background: #007bff;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Team Levels */
+.team-container {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px;
+}
+.team-box {
+    background: #1C2D4A;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    color: white;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+.team-box h3 {
+    color: #FFD700;
+}
+
+/* Animated Team Structure */
+.team-structure img {
+    width: 100%;
+    animation: fadeIn 2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* Team Rebate Section */
+.rebate-info {
+    padding: 15px;
+    background: #1C2D4A;
+    border-radius: 8px;
+    margin: 10px;
+}
+.highlight {
+    color: #FFD700;
+    font-weight: bold;
+}
+
+/* Bottom Navigation */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #132144;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+    box-shadow: 0 -2px 5px rgba(255, 255, 255, 0.2);
+}
+.bottom-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+}
+.bottom-nav .active {
+    color: #FFD700;
+}

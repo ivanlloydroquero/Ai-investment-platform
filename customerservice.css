@@ -1,0 +1,301 @@
+/* Customer Service Page Styling */
+.customer-service-content {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1); /* AI-themed gradient (blue shades) */
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(26, 115, 232, 0.7); /* Enhanced shadow and glow */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.customer-service-content:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(26, 115, 232, 0.9);
+    transform: translateY(-2px);
+}
+
+.customer-service-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-out;
+}
+
+.customer-service-content:hover::before {
+    opacity: 0.9;
+}
+
+.customer-service-section {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.customer-service-section h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #e0f7ff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.customer-service-section p {
+    font-size: 1.1em;
+    margin-bottom: 20px;
+    color: #bbdefb;
+    line-height: 1.6;
+}
+
+.support-image, .telegram-qr {
+    width: 100%;
+    max-width: 500px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.support-image:hover, .telegram-qr:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+.contact-info {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+    font-size: 1.1em;
+    color: #bbdefb;
+}
+
+.contact-info li {
+    margin-bottom: 10px;
+    transition: color 0.3s ease-out, text-shadow 0.3s ease-out;
+}
+
+.contact-info li:hover {
+    color: #e0f7ff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.telegram-link {
+    display: inline-block;
+    background: linear-gradient(45deg, #28a745, #34d058);
+    color: white;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    margin: 15px 0;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.telegram-link:hover {
+    background: linear-gradient(45deg, #218838, #2bb349);
+    transform: scale(1.05);
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.6);
+}
+
+.telegram-link:focus {
+    outline: 2px solid #218838;
+    outline-offset: 2px;
+}
+
+.telegram-link:active {
+    transform: scale(0.97);
+    background: linear-gradient(45deg, #1e7e34, #27a644);
+}
+
+.faq-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.faq-item {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-out, box-shadow 0.3s ease-out;
+}
+
+.faq-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+.faq-item h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #e0f7ff;
+}
+
+.faq-item p {
+    font-size: 1em;
+    color: #bbdefb;
+}
+
+/* Particle Animation Canvas */
+.particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure clicks pass through to content */
+    z-index: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.particle-canvas:hover {
+    opacity: 0.8;
+}
+
+/* 3D Particle Effect */
+.particle-3d {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float3D 6s infinite linear, rotate3D 12s infinite linear;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease-out;
+}
+
+@keyframes float3D {
+    0% { transform: translateZ(0) translateY(0) rotateX(0deg); }
+    50% { transform: translateZ(50px) translateY(-20px) rotateX(180deg); }
+    100% { transform: translateZ(0) translateY(0) rotateX(360deg); }
+}
+
+@keyframes rotate3D {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #007bff, #0d47a1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 123, 255, 0.5);
+    position: relative;
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.header:hover {
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 25px rgba(0, 123, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Back Button Styling */
+.back-btn {
+    background: linear-gradient(135deg, #007bff, #0d47a1);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 10; /* Ensure it’s above other elements */
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #0a2e5a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+}
+
+.back-btn:focus {
+    outline: 3px solid #0056b3;
+    outline-offset: 3px;
+}
+
+.back-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(135deg, #004085, #08214a);
+}
+
+/* Responsive Design for Customer Service Page */
+@media (max-width: 768px) {
+    .customer-service-content {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .customer-service-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .customer-service-section h2 {
+        font-size: 1.5em;
+    }
+
+    .customer-service-section p {
+        font-size: 1em;
+    }
+
+    .support-image, .telegram-qr {
+        max-width: 100%;
+        margin: 15px 0;
+    }
+
+    .contact-info {
+        font-size: 1em;
+    }
+
+    .faq-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .faq-item {
+        padding: 15px;
+    }
+
+    .back-btn {
+        position: static;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+}

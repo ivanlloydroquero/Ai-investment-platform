@@ -1,0 +1,281 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: linear-gradient(to bottom, #e3f2fd, #ffffff);
+}
+
+/* HEADER */
+header {
+    background: linear-gradient(to right, #0A0F1E, #0A0F1E);
+    padding: 15px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.vip-badge {
+    background: red;
+    color: white;
+    padding: 3px 7px;
+    font-size: 12px;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+
+.user-info {
+    text-align: right;
+}
+
+/* MAIN */
+main {
+    padding: 0px;
+}
+
+.balance-section {
+    text-align: center;
+    font-size: 15px;
+    margin-bottom: 20px;
+}
+
+.actions {
+    display: flex;
+    justify-content: space-around;
+}
+
+.actions button {
+    background: #0084ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    border-radius: 30px;
+    cursor: pointer;
+}
+
+.invite-banner {
+    background: #ff9800;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    margin: 20px 0;
+    border-radius: 5px;
+}
+
+.invite-banner a {
+    color: white;
+    font-weight: bold;
+}
+
+/* MENU */
+.advanced-menu {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1); /* AI-themed gradient (blue shades) */
+    padding: 15px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3), 0 0 20px rgba(26, 115, 232, 0.5); /* Enhanced shadow and glow */
+    color: white;
+    position: relative;
+    overflow: hidden;
+}
+
+.advanced-menu::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    z-index: 1;
+    opacity: 0.5;
+    transition: opacity 0.3s;
+}
+
+.advanced-menu:hover::before {
+    opacity: 0.8;
+}
+
+.menu-list {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    padding: 0;
+    margin: 0;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 2;
+}
+
+.menu-item {
+    color: white;
+    text-decoration: none;
+    padding: 14px 28px;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s, box-shadow 0.2s, color 0.3s, text-shadow 0.3s;
+    font-size: 1.1em;
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.menu-item::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+    z-index: 1;
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.08);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.4), 0 0 15px rgba(26, 115, 232, 0.8); /* Glowing effect */
+    color: #e0f7ff; /* Lighter white for contrast */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5); /* Glowing text on hover */
+}
+
+.menu-item:hover::before {
+    width: 250px;
+    height: 250px; /* Enhanced ripple effect */
+}
+
+.menu-item:focus {
+    outline: 3px solid #0056b3;
+    outline-offset: 3px;
+    box-shadow: 0 0 15px rgba(0, 86, 179, 0.8);
+}
+
+.menu-item:active {
+    transform: scale(0.96);
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 15px rgba(255, 255, 255, 0.3);
+}
+
+.menu-item[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #e0f7ff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 20;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    animation: fadeInTooltip 0.3s ease-in-out, floatTooltip 1.5s infinite ease-in-out;
+}
+
+@keyframes fadeInTooltip {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes floatTooltip {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
+
+/* Particle Animation Canvas */
+.particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure clicks pass through to menu items */
+    z-index: 1;
+}
+
+/* Responsive Design for Advanced Menu (stack vertically on mobile) */
+@media (max-width: 768px) {
+    .advanced-menu {
+        padding: 10px;
+        border-radius: 8px;
+    }
+
+    .menu-list {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .menu-item {
+        width: 100%;
+        text-align: center;
+        padding: 16px 0;
+    }
+
+    .menu-item:hover, .menu-item:focus {
+        background: rgba(255, 255, 255, 0.2);
+        transform: none; /* Disable scale on mobile for better touch */
+        box-shadow: none;
+        text-shadow: none;
+    }
+
+    .menu-item:active {
+        background: rgba(255, 255, 255, 0.3);
+    }
+
+    .menu-item[data-tooltip]:hover::after {
+        bottom: auto;
+        top: 120%;
+        transform: translateX(-50%);
+    }
+}
+/* FOOTER NAVIGATION */
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background: #132144;
+    display: flex;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.bottom-nav a {
+    text-decoration: none;
+    font-size: 14px;
+    color: white;
+    padding: 10px;
+}
+
+.bottom-nav .active {
+    color: #FFD700;
+}]

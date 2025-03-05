@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltalia - Rewards</title>
+    <link rel="stylesheet" href="rewards.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <button class="back-btn" onclick="goBack()">← Back</button>
+            <h1>Voltalia - Rewards</h1>
+        </header>
+
+        <main class="rewards-content">
+            <div class="rewards-section hero">
+                <h2>🔥 Unlock AI-Powered Rewards</h2>
+                <p>Earn and redeem rewards with Voltalia’s intelligent AI system, designed to enhance your financial journey and provide exclusive benefits.</p>
+                <img src="images/rewards-hero.jpg" alt="Voltalia rewards program overview" class="rewards-image">
+            </div>
+
+            <div class="rewards-section points">
+                <h2>Points System</h2>
+                <p>Earn Voltalia Points for every transaction, recharge, or investment. Points are calculated using our AI algorithm to maximize your rewards potential:</p>
+                <ul class="points-list">
+                    <li>Recharge: 10 points per ₱100</li>
+                    <li>Investment: 15 points per ₱100</li>
+                    <li>Referral: 50 points per successful referral</li>
+                </ul>
+                <div class="points-progress">
+                    <p>Your Points: <span id="userPoints">1,500</span> points</p>
+                    <progress value="1500" max="2000" class="progress-bar"></progress>
+                    <p>Next Reward at 2,000 points!</p>
+                </div>
+            </div>
+
+            <div class="rewards-section rewards-options">
+                <h2>Reward Options</h2>
+                <p>Redeem your points for exclusive benefits, curated by AI for maximum value:</p>
+                <div class="rewards-grid">
+                    <div class="reward-card">
+                        <img src="images/reward1.jpg" alt="Cashback Reward" class="reward-image">
+                        <h3>Cashback</h3>
+                        <p>500 points = ₱50 cashback</p>
+                        <button class="redeem-btn" onclick="redeemReward('cashback', 500)">Redeem</button>
+                    </div>
+                    <div class="reward-card">
+                        <img src="images/reward2.jpg" alt="Gift Card Reward" class="reward-image">
+                        <h3>Gift Card</h3>
+                        <p>1,000 points = ₱100 gift card</p>
+                        <button class="redeem-btn" onclick="redeemReward('giftcard', 1000)">Redeem</button>
+                    </div>
+                    <div class="reward-card">
+                        <img src="images/reward3.jpg" alt="VIP Access Reward" class="reward-image">
+                        <h3>VIP Access</h3>
+                        <p>2,000 points = VIP investment plan</p>
+                        <button class="redeem-btn" onclick="redeemReward('vip', 2000)">Redeem</button>
+                    </div>
+                </div>
+                <span class="ai-recommendation" id="aiRecommendation">AI recommends: Redeem Cashback for immediate value!</span>
+            </div>
+
+            <div class="rewards-section benefits">
+                <h2>Benefits of Voltalia Rewards</h2>
+                <p>Our AI-powered rewards program offers:</p>
+                <ul class="benefits-list">
+                    <li>Personalized recommendations based on your activity</li>
+                    <li>Instant redemption with AI verification</li>
+                    <li>Exclusive perks for loyal users</li>
+                    <li>Seamless integration with your Voltalia account</li>
+                </ul>
+                <img src="images/benefits-image.jpg" alt="Voltalia rewards benefits" class="rewards-image">
+            </div>
+            <canvas class="particle-canvas" id="particleCanvas"></canvas>
+        </main>
+    </div>
+    <script src="rewards.js"></script>
+</body>
+</html>

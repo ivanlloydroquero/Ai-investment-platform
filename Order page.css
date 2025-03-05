@@ -1,0 +1,81 @@
+/* HEADER */
+header {
+    background: linear-gradient(to right, #0052D4, #4364F7);
+    padding: 15px;
+    color: white;
+    text-align: center;
+}
+
+/* FILTER BUTTONS */
+.filter-section {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin: 15px 0;
+}
+
+.filter-btn {
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    background: #ddd;
+    border-radius: 5px;
+}
+
+.filter-btn.active {
+    background: #0084ff;
+    color: white;
+}
+
+/* ORDER LIST */
+.order-list {
+    padding: 10px;
+}
+
+.order-item {
+    background: white;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.status {
+    padding: 5px;
+    border-radius: 3px;
+}
+
+.status.completed { background: green; color: white; }
+.status.pending { background: orange; color: white; }
+.status.cancelled { background: red; color: white; }
+
+/* VIEW BUTTON */
+.view-btn {
+    margin-top: 10px;
+    padding: 7px;
+    border: none;
+    background: #0084ff;
+    color: white;
+    cursor: pointer;
+}
+
+/* FOOTER NAVIGATION */
+nav {
+    background: #222;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.nav-item {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+.nav-item.active {
+    color: yellow;
+}

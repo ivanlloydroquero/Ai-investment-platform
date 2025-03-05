@@ -1,0 +1,96 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltalia Recharge Platform</title>
+    <link rel="stylesheet" href="recharge.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Voltalia Recharge</h1>
+            <div class="balance-section">
+                <h2>Account Balance</h2>
+                <div class="balance-amount">₱<span id="balance">50.00</span></div>
+                <button class="history-btn">Recharge History ></button>
+            </div>
+        </header>
+
+        <main class="recharge-form">
+            <form id="rechargeForm">
+                <div class="form-group amount-selection">
+                    <h3>Select Recharge Amount</h3>
+                    <div class="amount-options">
+                        <button class="amount-btn active" data-amount="250">₱250</button>
+                        <button class="amount-btn" data-amount="600">₱600</button>
+                        <button class="amount-btn" data-amount="1500">₱1500</button>
+                        <button class="amount-btn" data-amount="3000">₱3000</button>
+                        <button class="amount-btn" data-amount="6000">₱6000</button>
+                        <button class="amount-btn" data-amount="12000">₱12000</button>
+                        <button class="amount-btn" data-amount="24000">₱24000</button>
+                        <button class="amount-btn" data-amount="48000">₱48000</button>
+                    </div>
+                    <p class="min-amount">Minimum recharge: ₱250</p>
+                </div>
+
+                <div class="form-group account-type">
+                    <h3>Payment Method</h3>
+                    <div class="radio-group">
+                        <label class="radio-label">
+                            <input type="radio" name="paymentMethod" value="maya" checked>
+                            Maya
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="paymentMethod" value="gcash">
+                            GCash
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group payment-channel">
+                    <h3>Payment Channel</h3>
+                    <div class="channel-options">
+                        <button class="channel-btn active" data-channel="1">
+                            <span>Channel 1</span>
+                            <i class="check-icon">✓</i>
+                        </button>
+                        <button class="channel-btn" data-channel="2">
+                            <span>Channel 2</span>
+                            <i class="check-icon">✓</i>
+                        </button>
+                        <button class="channel-btn" data-channel="3">
+                            <span>Channel 3</span>
+                            <i class="check-icon">✓</i>
+                        </button>
+                        <button class="channel-btn" data-channel="4">
+                            <span>Channel 4</span>
+                            <i class="check-icon">✓</i>
+                        </button>
+                        <button class="channel-btn" data-channel="5">
+                            <span>Channel 5</span>
+                            <i class="check-icon">✓</i>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="recharge-btn">Proceed to Payment</button>
+            </form>
+
+            <div class="payment-redirect" id="paymentRedirect"></div>
+
+            <div class="reminders">
+                <h3>Important Reminders:</h3>
+                <ul>
+                    <li>Minimum deposit amount: ₱250, otherwise it will not be credited.</li>
+                    <li>New deposit order: Each time you recharge, you must enter the Voltalia platform to create a new deposit order. Otherwise, the recharge will be repeated and will not be credited!</li>
+                    <li>Recharge receipt reflection: If the Voltalia platform balance is not credited within 20 minutes, please contact customer service through the Voltalia platform.</li>
+                    <li>Channel payment method: If the current channel is abnormal, please switch to another channel for recharge payment. Recharge is only allowed through the Voltalia platform, otherwise it will not be processed for you.</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    <script src="recharge.js"></script>
+</body>
+</html>

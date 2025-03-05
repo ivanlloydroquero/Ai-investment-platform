@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voltalia - Advanced AI Withdraw</title>
+    <link rel="stylesheet" href="withdraw.css">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Voltalia Withdraw</h1>
+            <div class="balance-section">
+                <h2>Account Balance</h2>
+                <div class="balance-amount">₱<span id="balance">5,000.00</span></div>
+                <button class="history-btn" onclick="showHistory()">Withdraw History ></button>
+                <button class="analytics-btn" onclick="showAnalytics()">AI Analytics ></button>
+            </div>
+        </header>
+
+        <main class="withdraw-content">
+            <div class="withdraw-form advanced-form">
+                <h2>🔄 AI-Optimized Withdraw</h2>
+                <p>Withdraw funds securely with our intelligent AI recommendations.</p>
+                <form id="withdrawForm">
+                    <div class="form-group">
+                        <label for="withdrawAmount">Withdrawal Amount (₱)</label>
+                        <div class="input-container">
+                            <input type="number" id="withdrawAmount" name="withdrawAmount" min="100" step="50" placeholder="Enter amount (min ₱100)" required>
+                            <button type="button" class="voice-btn" onclick="startVoiceInput()" aria-label="Use voice to enter withdrawal amount">🎙️</button>
+                        </div>
+                        <span class="ai-suggestion" id="aiSuggestion" data-tooltip="Click for AI analysis: Predicted ROI +2.5% in 7 days">AI suggests: ₱500 for optimal balance</span>
+                        <span class="validation-message" id="validationMessage"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="paymentMethod">Payment Method</label>
+                        <select id="paymentMethod" name="paymentMethod" required>
+                            <option value="maya">Maya</option>
+                            <option value="gcash">GCash</option>
+                            <option value="bank">Bank Transfer</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="withdraw-btn">Withdraw Now</button>
+                </form>
+                <div class="reminders">
+                    <h3>Important Notes:</h3>
+                    <ul>
+                        <li>Minimum withdrawal: ₱100. AI optimizes for low fees.</li>
+                        <li>Processing: 1-3 business days with AI verification.</li>
+                        <li>AI predicts optimal withdrawal times for maximum returns.</li>
+                    </ul>
+                </div>
+            </div>
+            <canvas class="particle-canvas" id="particleCanvas"></canvas>
+        </main>
+
+        <div class="modal" id="modal">
+            <div class="modal-content">
+                <h2 id="modalTitle"></h2>
+                <div id="modalContent"></div>
+                <button onclick="closeModal()">Close</button>
+            </div>
+        </div>
+
+        <div class="modal analytics-modal" id="analyticsModal">
+            <div class="modal-content">
+                <h2>AI Withdrawal Analytics</h2>
+                <div id="analyticsContent">
+                    <p>Balance Trend: Stable</p>
+                    <p>Optimal Withdrawal: ₱500 (Predicted ROI +2.5%)</p>
+                    <p>Recent Activity: 3 withdrawals in last 30 days</p>
+                    <canvas id="analyticsChart" width="300" height="150"></canvas>
+                </div>
+                <button onclick="closeAnalyticsModal()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="withdraw.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script> <!-- For analytics chart -->
+</body>
+</html>

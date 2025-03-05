@@ -1,0 +1,590 @@
+/* Withdraw Page Styling */
+.withdraw-content {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1); /* AI-themed gradient (blue shades) */
+    padding: 25px;
+    border-radius: 12px;
+    margin: 20px 0;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 30px rgba(26, 115, 232, 0.7); /* Enhanced shadow and glow */
+    color: white;
+    position: relative;
+    overflow: hidden;
+    transition: box-shadow 0.3s, transform 0.3s ease-out;
+}
+
+.withdraw-content:hover {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(26, 115, 232, 0.9);
+    transform: translateY(-2px);
+}
+
+.withdraw-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+    z-index: 1;
+    opacity: 0.6;
+    transition: opacity 0.3s ease-out;
+}
+
+.withdraw-content:hover::before {
+    opacity: 0.9;
+}
+
+.advanced-form {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 2;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.advanced-form h2 {
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    color: #e0f7ff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    animation: pulse 2s infinite ease-in-out;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    }
+    50% {
+        text-shadow: 0 0 25px rgba(255, 255, 255, 0.7);
+    }
+}
+
+.advanced-form p {
+    font-size: 1em;
+    margin-bottom: 25px;
+    color: #bbdefb;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #e0f7ff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+.input-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.form-group input, .form-group select {
+    width: 100%;
+    padding: 12px 40px 12px 12px; /* Space for voice button */
+    border: none;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-size: 1em;
+    transition: background 0.3s ease-out, box-shadow 0.3s ease-out, border-color 0.3s ease-out;
+}
+
+.form-group input:focus, .form-group select:focus {
+    background: rgba(255, 255, 255, 0.3);
+    box-shadow: 0 0 15px rgba(26, 115, 232, 0.7);
+    border-color: #28a745;
+    outline: none;
+}
+
+.voice-btn {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    color: #e0f7ff;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: color 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    padding: 5px;
+}
+
+.voice-btn:hover {
+    color: #bbdefb;
+    transform: scale(1.1);
+    box-shadow: 0 0 10px rgba(187, 222, 251, 0.5);
+}
+
+.voice-btn:focus {
+    outline: 2px solid #bbdefb;
+    outline-offset: 2px;
+}
+
+.voice-btn:active {
+    transform: scale(0.95);
+}
+
+.ai-suggestion {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.9em;
+    color: #bbdefb;
+    opacity: 0.9;
+    transition: opacity 0.3s ease-out, color 0.3s ease-out, text-shadow 0.3s ease-out;
+    cursor: pointer;
+    position: relative;
+}
+
+.ai-suggestion:hover {
+    opacity: 1;
+    color: #e0f7ff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.ai-suggestion[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    color: #e0f7ff;
+    padding: 8px 15px;
+    border-radius: 6px;
+    font-size: 0.9em;
+    white-space: nowrap;
+    z-index: 20;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    animation: fadeInTooltip 0.3s ease-in-out, floatTooltip 1.5s infinite ease-in-out;
+}
+
+.validation-message {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #dc3545;
+    opacity: 0;
+    transition: opacity 0.3s ease-out, color 0.3s ease-out;
+}
+
+.validation-message.visible {
+    opacity: 1;
+}
+
+.withdraw-btn {
+    background: linear-gradient(45deg, #28a745, #34d058); /* Green gradient for Withdraw */
+    color: white;
+    border: none;
+    padding: 14px 35px;
+    border-radius: 12px;
+    cursor: pointer;
+    font-size: 1.2em;
+    transition: background 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    width: 100%;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+    overflow: hidden;
+}
+
+.withdraw-btn::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    transition: width 0.6s ease-out, height 0.6s ease-out;
+    z-index: 1;
+}
+
+.withdraw-btn:hover {
+    background: linear-gradient(45deg, #218838, #2bb349); /* Darker green on hover */
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.8);
+}
+
+.withdraw-btn:hover::before {
+    width: 300px;
+    height: 300px; /* Ripple effect on hover */
+}
+
+.withdraw-btn:focus {
+    outline: 3px solid #218838;
+    outline-offset: 3px;
+}
+
+.withdraw-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(45deg, #1e7e34, #27a644); /* Even darker green for active state */
+}
+
+.reminders {
+    margin-top: 25px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    font-size: 1em;
+    color: #bbdefb;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-out, transform 0.3s ease-out;
+}
+
+.reminders:hover {
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.reminders ul {
+    list-style-type: none;
+    padding-left: 20px;
+}
+
+.reminders li {
+    margin-bottom: 12px;
+    position: relative;
+    transition: color 0.3s ease-out, text-shadow 0.3s ease-out;
+}
+
+.reminders li:hover {
+    color: #e0f7ff;
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+
+.reminders li::before {
+    content: "•";
+    color: #e0f7ff;
+    position: absolute;
+    left: -15px;
+    animation: pulseDot 2s infinite ease-in-out;
+}
+
+@keyframes pulseDot {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.3);
+    }
+}
+
+/* Particle Animation Canvas */
+.particle-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Ensure clicks pass through to form elements */
+    z-index: 1;
+    transition: opacity 0.3s ease-out;
+}
+
+.particle-canvas:hover {
+    opacity: 0.8;
+}
+
+/* 3D Particle Effect */
+.particle-3d {
+    position: absolute;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    animation: float3D 6s infinite linear, rotate3D 12s infinite linear;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+    transition: transform 0.3s ease-out;
+}
+
+@keyframes float3D {
+    0% { transform: translateZ(0) translateY(0) rotateX(0deg); }
+    50% { transform: translateZ(50px) translateY(-20px) rotateX(180deg); }
+    100% { transform: translateZ(0) translateY(0) rotateX(360deg); }
+}
+
+@keyframes rotate3D {
+    0% { transform: rotateY(0deg); }
+    100% { transform: rotateY(360deg); }
+}
+
+/* Modal and Analytics Modal Styling */
+.modal, .analytics-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1000;
+    backdrop-filter: blur(5px); /* Modern blur effect */
+    transition: opacity 0.3s ease-out;
+}
+
+.modal-content, .analytics-modal .modal-content {
+    background: linear-gradient(135deg, #1a73e8, #0d47a1);
+    margin: 5% auto; /* Reduced margin for shorter modal */
+    padding: 20px;
+    width: 90%;
+    max-width: 450px; /* Reduced max-width for compactness */
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3), 0 0 20px rgba(26, 115, 232, 0.5);
+    color: white;
+    animation: slideIn 0.5s ease-in-out;
+    overflow: auto; /* Ensure content scrolls if too long */
+    max-height: 80vh; /* Limit modal height for visibility */
+}
+
+.analytics-modal .modal-content {
+    max-width: 500px; /* Slightly increased for chart visibility */
+    max-height: 75vh; /* Adjusted for better chart fit */
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.modal-content button, .analytics-modal .modal-content button {
+    background: linear-gradient(45deg, #28a745, #34d058);
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    font-size: 1em;
+    margin-top: 15px;
+    width: 100%; /* Ensure button spans full width for visibility */
+    position: sticky; /* Keep button visible at bottom of modal */
+    bottom: 10px; /* Position at the bottom */
+    background: linear-gradient(45deg, #28a745, #34d058); /* Ensure gradient is applied */
+}
+
+.modal-content button:hover, .analytics-modal .modal-content button:hover {
+    background: linear-gradient(45deg, #218838, #2bb349);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+}
+
+.modal-content button:focus, .analytics-modal .modal-content button:focus {
+    outline: 3px solid #218838;
+    outline-offset: 3px;
+}
+
+/* Analytics Grid Styling */
+.analytics-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    margin-bottom: 20px;
+    font-size: 1em;
+    color: #e0f7ff;
+}
+
+.analytics-grid p {
+    margin: 0;
+    padding: 5px 0;
+}
+
+/* Back Button Styling */
+.back-btn {
+    background: linear-gradient(135deg, #007bff, #0d47a1);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.1em;
+    transition: background 0.3s ease-out, transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+    z-index: 10; /* Ensure it’s above other elements */
+}
+
+.back-btn:hover {
+    background: linear-gradient(135deg, #0056b3, #0a2e5a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 86, 179, 0.5);
+}
+
+.back-btn:focus {
+    outline: 3px solid #0056b3;
+    outline-offset: 3px;
+}
+
+.back-btn:active {
+    transform: scale(0.97);
+    background: linear-gradient(135deg, #004085, #08214a);
+}
+
+/* AI Indicator Styling */
+.ai-indicator {
+    font-size: 0.8em;
+    margin-left: 5px;
+    animation: pulse 1.5s infinite ease-in-out; /* Changed to pulse for smoother effect */
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% {
+        transform: scale(1.2);
+        opacity: 0.8;
+    }
+}
+
+/* Loading and Success Messages */
+.loading, .success-message {
+    margin: 15px 0;
+    padding: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    text-align: center;
+    color: #e0f7ff;
+    animation: fadeIn 0.5s ease-in-out;
+    transition: opacity 0.3s ease-out;
+}
+
+.success-message span.amount {
+    color: #28a745; /* Green for successful withdrawal amount */
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(40, 167, 69, 0.5);
+}
+
+/* Header Styling */
+.header {
+    background: linear-gradient(135deg, #007bff, #0d47a1);
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 0 0 20px rgba(0, 123, 255, 0.5);
+    position: relative;
+}
+
+.balance-section {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+    gap: 15px;
+    justify-content: center;
+}
+
+/* Responsive Design for Withdraw Page */
+@media (max-width: 768px) {
+    .withdraw-content {
+        padding: 15px;
+        border-radius: 8px;
+    }
+
+    .advanced-form {
+        padding: 15px;
+    }
+
+    .advanced-form h2 {
+        font-size: 1.5em;
+    }
+
+    .withdraw-btn, .modal-back-btn {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .form-group input, .form-group select {
+        padding: 10px;
+    }
+
+    .voice-btn {
+        font-size: 1em;
+    }
+
+    .balance-section {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .history-btn, .analytics-btn, .back-btn {
+        padding: 8px 15px;
+        font-size: 0.9em;
+    }
+
+    .back-btn {
+        position: static;
+        margin-bottom: 10px;
+        width: 100%;
+    }
+
+    .modal-content, .analytics-modal .modal-content {
+        margin: 10% auto;
+        max-width: 90%;
+        padding: 15px;
+    }
+
+    .analytics-modal .modal-content {
+        max-height: 70vh;
+    }
+
+    #analyticsChart {
+        width: 300px;
+        height: 150px;
+    }
+}
+
+/* Tooltips for AI Suggestion */
+.ai-suggestion[data-tooltip]:hover::after {
+    animation: fadeInTooltip 0.3s ease-in-out, floatTooltip 1.5s infinite ease-in-out;
+}
+
+@keyframes fadeInTooltip {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+@keyframes floatTooltip {
+    0%, 100% {
+        transform: translateX(-50%) translateY(0);
+    }
+    50% {
+        transform: translateX(-50%) translateY(-5px);
+    }
+}
